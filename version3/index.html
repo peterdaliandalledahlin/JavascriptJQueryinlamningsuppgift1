@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+<main>
+
+  <div class="container">
+      <div class="shadow p-3 mb-5 bg-white rounded">
+    <div class="form_bg_img">
+    <form action="" class="needs-validation" novalidate autocomplete="off">
+        <fieldset>
+            <legend>Javascript & JQuery - inlämningsuppgift 1</legend>
+        </fieldset>
+      <div class="row">
+          <div class="col-md-3 mb-3">
+            <div class="form-group">
+              <label for="firstName">Förnamn</label>
+              <input type="text" class="form-control" id="firstName" value="" data-container=".row" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Namnet måste innehålla minst 2 tecken och inga siffror." required>
+              <div class="invalid-feedback">Du måste ange ett förnamn med minst 2 tecken</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="form-group">
+              <label for="lastName">Efternamn</label>
+              <input type="text" class="form-control" id="lastName" value=""  data-container=".row" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Namnet måste innehålla minst 2 tecken och inga siffror." required>
+              <div class="invalid-feedback">Du måste ange ett efternamn med minst 2 tecken</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <label for="email">Epostadress</label>
+            <input type="email" class="form-control" id="email" value=""  data-container=".row" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Ange en giltig e-postadress; exempel@exempel.se" required>
+            <div class="invalid-feedback">Du måste ange en epostadress</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="form-group">
+            <label for="password">Lösenord</label>
+            <input type="password" class="form-control" id="password" value=""  data-container=".row" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Lösenordet måste innhålla minst 8 tecken!" required>
+            <div class="invalid-feedback">Du måste ange ett lösenord på minst 8 tecken</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="form-group">
+            <label for="confirm_password">Bekräfta lösenord</label>
+            <input type="password" class="form-control" id="confirm_password" value=""  data-container=".row" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Lösenorden måste matcha varandra!" required>
+            <div id="confirmPasswordInvalidFeedback" class="invalid-feedback">Lösenorden matchar inte varandra</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <label for="textarea">Skriv några rader</label>
+            <textarea class="form-control" id="textarea" rows="3"  data-container=".row" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Skriv gärna några rader, din åsikt är ovärderlig för oss!"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+          <label for="postalCity">Vad har du för utbildning?</label>
+            <select id="postalCity" class="custom-select d-block w-100" required>
+              <option value="">Välj ett alternativ:</option>
+              <option value="1">FrontEnd developer</option>
+              <option value="2">BackEnd developer</option>
+              <option value="3">FullStack developer</option>
+            </select>
+            <div class="invalid-feedback">Du måste välja en ort</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <div id="learnMore" class="d-block my-3">
+              <div class="custom-control custom-radio">
+                  <p class="form-control-static">Vad vill du lära dig mer om?</p>
+                <input type="radio" name="paymentMethod" id="credit" class="custom-control-input" required>
+                <label for="credit" class="custom-control-label" >HTML5</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" name="paymentMethod" id="swisch" class="custom-control-input" required>
+                <label for="swisch" class="custom-control-label" >CSS3</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" name="paymentMethod" id="paypal" class="custom-control-input" required>
+                <label for="paypal" class="custom-control-label" >Javascript</label>
+              </div>
+              <div class="invalid-feedback">Du måste välja ett alternativ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" id="checkme" class="custom-control-input" required>
+            <label for="checkme" class="custom-control-label">Godkänner</label>
+        </div>
+        </div>
+      </div>
+
+      <button type="submit" id="send" class="btn btn-primary" disabled>Registrera nytt medlemskap</button>
+
+    </form>
+
+    </div>
+    </div>
+  </div>
+
+</main>
+
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+
+<script>
+
+                //validate checkbox to remove disabled from button
+
+                let checker = document.getElementById('checkme');
+                let sendbtn = document.getElementById('send');
+                // when unchecked or checked, run the function
+                checker.onchange = function(){
+                if(this.checked){
+                sendbtn.disabled = false;
+                } else {
+                sendbtn.disabled = true;
+                }
+            }
+
+
+</script>    
+
+</body>
+</html>

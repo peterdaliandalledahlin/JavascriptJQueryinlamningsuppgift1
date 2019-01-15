@@ -1,0 +1,31 @@
+body {
+    margin-top: 4rem;
+}
+
+legend {
+    font-size: 1.1rem;
+}
+
+#signupForm {
+    width: 500px;
+}
+
+.needs-validation {
+    box-shadow: inset -10px 0 5px -5px hsla(0,100%,50%,.80);
+}
+.form-group button {
+    margin-top: 2rem;;
+}
+
+.mb {
+    margin-bottom: 3rem !important;
+  }
+
+.error {
+    color: red;
+}
+
+
+#charNum {
+    float: right;
+}

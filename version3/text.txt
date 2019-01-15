@@ -1,0 +1,267 @@
+ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"
+
+ /* The message box is shown when the user clicks on the password field */
+#message {
+    display: none;
+    /*background: #f1f1f1;*/
+    /*color: #000;*/
+    position: relative;
+    /*padding: 20px;*/
+    /*margin-top: 10px;*/
+  }
+  
+  #message p {
+    padding: 5px 5px;
+    font-size: 1rem;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+  
+  .valid:before {
+    position: relative;
+    left: -4px;
+    /*content: "&#10004;";*/
+    content: "✔";
+  }
+  
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -4px;
+    /*content: "&#10006;";*/
+    content: "✖";
+  }
+
+  function validateForm()                                    
+{
+    /*
+    let name = document.forms["RegForm"]["name"];               
+    let email = document.forms["RegForm"]["email"];    
+    let pwd = document.forms["RegForm"]["pwd"];  
+    let phone =  document.forms["RegForm"]["phone"];  
+    let what = document.forms["RegForm"]["subject"];  
+    let radios = document.forms["RegForm"]["radios"];
+    */
+    let name = document.getElementById("name");              
+    let email = document.getElementById("email");     
+    let pwd = document.getElementById("pwd");   
+    let phone =  document.getElementById("phone");  
+    let what = document.getElementById("subject");  
+    let radios = document.getElementById("radios");
+   
+    if (name.value == "")                                  
+    { 
+        document.getElementById('nameError').innerHTML = 'Please enter your name';
+        //window.alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+    }
+
+    if (email.value == "")                                   
+    { 
+        document.getElementById('emailError').innerHTML = 'Please enter your email';
+        //window.alert("Please enter a valid e-mail address.");
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        document.getElementById('emailError').innerHTML = 'Please enter a valid emailaddress';
+        //window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        document.getElementById('emailError').innerHTML = 'Please enter a valid emailaddress';
+        //window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    }
+
+    if (pwd.value == "")                        
+    { 
+        document.getElementById('pwdError').innerHTML = 'Please enter a password';
+        //window.alert("Please enter your password"); 
+        password.focus(); 
+        return flase; 
+    } 
+   
+    if (phone.value == "")                               
+    { 
+        document.getElementById('phoneError').innerHTML = 'Please enter a phonenumber';
+        //window.alert("Please enter a phonenumber."); 
+        name.focus(); 
+        return false; 
+    }
+   
+   
+    if (what.selectedIndex < 1)                  
+    { 
+        document.getElementById('whatError').innerHTML = 'Please select an item';
+        //alert("Please enter your course."); 
+        what.focus(); 
+        return false; 
+    }
+
+    if (radios.selectedIndex < 1)
+    //if (radios.value == "")                               
+    { 
+        document.getElementById('radiosError').innerHTML = 'Please select a value';
+        //window.alert("Please choose an option."); 
+        name.focus(); 
+        return false; 
+    }   
+   
+    return true;
+}
+
+
+
+
+
+
+
+
+
+/*
+//validate one radiobuttons is selected
+
+function Validate() {
+    let radios = document.getElementsByName('type')
+
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+        alert("Selected Value = " + radios[i].value);
+        return true; // checked
+    }
+    };
+
+    // not checked, show error
+    document.getElementById('ValidationError').innerHTML = 'Du måste välja ett av de tre alternativen!';
+    return false;
+}
+
+//validate password requirements
+
+let myInput = document.getElementById("psw");
+let letter = document.getElementById("letter");
+let capital = document.getElementById("capital");
+let number = document.getElementById("number");
+let length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "flex";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  let lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) { 
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+}
+
+  // Validate capital letters
+  let upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) { 
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  let numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) { 
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
+  //Validate textinput
+
+$(document).ready(function(){
+
+    //validate name input field is not empty
+
+    $("#name").focusout(function(){
+        if (!$(this).val()) {
+              //alert("This field is required");
+              document.getElementById('nameError').innerHTML = 'Du måste fylla i det här fältet!';
+              $(this).focus();
+        }
+    });
+
+    //validate password input field is not empty
+
+    $("#psw").focusout(function(){
+        if (!$(this).val()) {
+              //alert("This field is required");
+              document.getElementById('passwordError').innerHTML = 'Du måste fylla i det här fältet!';
+              $(this).focus();
+        }
+    });
+
+    //validate textarea field is not empty
+
+    $("#textarea").focusout(function(){
+        if (!$(this).val()) {
+              //alert("This field is required");
+              document.getElementById('textareaError').innerHTML = 'Du måste fylla i det här fältet!';
+              $(this).focus();
+        }
+    });
+
+
+
+});
+
+  //Validate select country
+
+function selectValidate()
+{
+    let e = document.getElementById("ddlView");
+    let strUser = e.options[e.selectedIndex].value;
+
+    let strUser1 = e.options[e.selectedIndex].text;
+    if(strUser==0)
+    {
+        //alert("Please select a user");
+        document.getElementById('selectError').innerHTML = 'Du måste välja ett land!';
+        return false;
+    }
+}
+*/
