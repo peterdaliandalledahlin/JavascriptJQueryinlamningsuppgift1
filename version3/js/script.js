@@ -167,7 +167,7 @@ $(function () {
             return ($password === $confirmPassword) ? true : false;
         }
     
-        window.addEventListener("load", function() {
+        window.addEventListener("click", function() {
             var forms = document.getElementsByClassName("needs-validation");
             Array.prototype.filter.call(forms, function(form) {
                 form.addEventListener("submit", function(event) {
